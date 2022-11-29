@@ -104,6 +104,16 @@ def save_otchisleni():
         writer.writeheader()
         writer.writerows(csv_otchisleni_file)
 
+def to_string():
+    global file_csv
+    for el in file_csv:
+        print('{0}: {1} учится в группе {2} на {3} курсе, номер студ. билета: {4}'.format(
+            'Студент' if el['пол'].lower() == 'мужской' else 'Студента',
+            el['фио'],
+            el['группа'],
+            el['курс'],
+            el['ном']
+        ))
 
 # Сохранение
 def save():
@@ -145,4 +155,5 @@ def find(val, col_name='фио'):
     except Exception as e:
         print('Данные не найдены: ', e, sep='\n')
 
-        # Вывод совершеннолетних студентов
+
+
