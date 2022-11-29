@@ -1,3 +1,5 @@
+from data_csv import file_open
+
 menu = {
     '1': 'Открыть файл',
     '2': 'Добавить',
@@ -21,7 +23,7 @@ showMenu()
 while True:
     command = input()
     if command == '1':
-        print(1)
+        file_open()
     elif command == '2':
         print(2)
     elif command == '3':
