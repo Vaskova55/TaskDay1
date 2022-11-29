@@ -1,4 +1,4 @@
-from data_csv import open_file, insert_data, drop_by_arg, find, save
+from data_csv import open_file, insert_data, drop_by_arg, find, go_to_next_curs, save
 
 menu = {
     '1': 'Открыть файл',
@@ -35,7 +35,7 @@ while True:
         val = input('Значение: ')
         find(val, col_name=col)
     elif command == '5':
-        print(5)
+        go_to_next_curs()
     elif command == '6':
         print(6)
     elif command == '7':
