@@ -1,4 +1,4 @@
-from data_csv import open_file, insert_data, save
+from data_csv import open_file, insert_data, drop_by_arg, save
 
 menu = {
     '1': 'Открыть файл',
@@ -27,7 +27,9 @@ while True:
     elif command == '2':
         insert_data(input('ФИО: '), input('Пол: '), int(input('Возраст: ')), input('Телефон: '), input('Почта: '), input('Группа: '), input('Курс: '))
     elif command == '3':
-        print(3)
+        col = input('Колонка: ')
+        val = input('Значение: ')
+        drop_by_arg(val, col_name=col)
     elif command == '4':
         print(4)
     elif command == '5':
