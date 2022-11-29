@@ -70,3 +70,10 @@ def drop_by_arg(val, col_name='фио'):
         print(f'Строка со значением {val} поля {col_name} не найдена.')
         return
     print(f'Строка со значением "{val}" столбца "{col_name}" удалена.')
+
+# Поиск
+def find(val, col_name='фио'):
+    try:
+        print(*list(filter(lambda x: x[col_name] == val, file_csv)))
+    except Exception as e:
+        print('Данные не найдены: ', e, sep='\n')
