@@ -1,11 +1,12 @@
 import csv
 
 file_csv = []
-
+fileName = ''
 
 # Открываем csv файл
 def open_file():
     global file_csv
+    global fileName
     fileName = input('Название файла (по умолчанию data.csv): ')
     # Если файл не указан - задаём значение по умолчанию
     if (fileName == ''):
@@ -39,3 +40,20 @@ def insert_data(fio, gender, age, tel, email, group, curs):
         print('Ошибка при добавленнии новой записи: ', e, sep='\n')
         return
     print('Данные добавлены.')
+
+    # Сохранение
+def save():
+        global fileName
+        if (fileName == ''):
+            print('Файл не выбран!')
+            return
+        try:
+            with open(fileName, "w", encoding="utf-8", newline="") as file:
+                columns = ['ном', 'фио', 'пол', 'возраст', 'телефон', 'почта',
+                           'группа', 'курс']
+                writer = csv.DictWriter(file, delimiter=";", fieldnames=columns)
+                writer.writeheader()
+                writer.writerows(file_csv)
+                print("Данные сохранены!")
+        except Exception as e:
+            print('Ошибка при сохранении: ', e, sep='\n')

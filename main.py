@@ -1,4 +1,4 @@
-from data_csv import open_file, insert_data
+from data_csv import open_file, insert_data, save
 
 menu = {
     '1': 'Открыть файл',
@@ -39,7 +39,7 @@ while True:
     elif command == '8':
         print(8)
     elif command == '9':
-        print(9)
+        save()
     elif command == '0':
         showMenu()
     elif command == 'exit':
